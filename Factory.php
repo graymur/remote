@@ -9,6 +9,15 @@ namespace Graymur\Remote;
 
 class Factory
 {
+    /**
+     * @param string $protocol
+     * @param $server
+     * @param $login
+     * @param $password
+     * @param null $port
+     * @return RemoteAbstract
+     * @throws RemoteException
+     */
     static function get($protocol = 'FTP', $server, $login, $password, $port = null)
     {
         $className = "\\Graymur\\Remote\\Protocols\\" . strtoupper($protocol);
